@@ -5,84 +5,84 @@ class TestMaximumValue {
 
     @Test
     public void testMaximum_ProvideFirstValueMaximum_ShouldReturnFirst() {
-        FindMaximum findMaximum = new FindMaximum();
-        int max = findMaximum.maxValueFromThree(9, 7, 8);
+        FindMaximum findMaximum = new FindMaximum(9, 7, 8);
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals(9, max);
     }
 
     @Test
     public void testMaximum_ProvideSecondValueMaximum_ShouldReturnSecond() {
-        FindMaximum findMaximum = new FindMaximum();
-        int max = findMaximum.maxValueFromThree(7, 9, 8);
+        FindMaximum findMaximum = new FindMaximum(7, 9, 8);
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals(9, max);
     }
 
     @Test
     public void testMaximum_ProvideThirdValueMaximum_ShouldReturnThird() {
-        FindMaximum findMaximum = new FindMaximum();
-        int max = findMaximum.maxValueFromThree(7, 9, 20);
+        FindMaximum findMaximum = new FindMaximum(7, 9, 20);
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals(20, max);
     }
 
     @Test
     public void testMaximum_ProvideWrongInput_ShouldReturnFalse() {
-        FindMaximum findMaximum = new FindMaximum();
-        int max = findMaximum.maxValueFromThree(9, 7, 8);
+        FindMaximum findMaximum = new FindMaximum(9, 7, 8);
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertNotEquals(7, max);
     }
 
     @Test
     public void testMaximum_ProvideFirstFlotValueMaximum_ShouldReturnFirstValue() {
-        FindMaximum findMaximum = new FindMaximum();
-        float max = findMaximum.maxValueFromThree(20.2f, 9.1f, 8.7f);
-        Assert.assertEquals(20.2f, max, 0.00002);
+        FindMaximum findMaximum = new FindMaximum(20.2f, 9.1f, 8.7f);
+        Comparable max = findMaximum.maxValueFromThree();
+        Assert.assertEquals(20.2f, max);
     }
 
     @Test
     public void testMaximum_ProvideSecondFlotValueMaximum_ShouldReturnSecondValue() {
-        FindMaximum findMaximum = new FindMaximum();
-        float max = findMaximum.maxValueFromThree(9.1f, 20.2f, 8.7f);
-        Assert.assertEquals(20.2f, max, 0.00002);
+        FindMaximum findMaximum = new FindMaximum(9.1f, 20.2f, 8.7f);
+        Comparable max = findMaximum.maxValueFromThree();
+        Assert.assertEquals(20.2f, max);
     }
 
     @Test
     public void testMaximum_ProvideThirdFlotValueMaximum_ShouldReturnThirdValue() {
-        FindMaximum findMaximum = new FindMaximum();
-        float max = findMaximum.maxValueFromThree(20.2f, 9.1f, 21.7f);
-        Assert.assertEquals(21.7f, max, 0.00002);
+        FindMaximum findMaximum = new FindMaximum(20.2f, 9.1f, 21.7f);
+        Comparable max = findMaximum.maxValueFromThree();
+        Assert.assertEquals(21.7f, max);
     }
 
     @Test
     public void provideFloatValue_passWrongMaximum_shouldReturnFalse() {
-        FindMaximum maximum = new FindMaximum();
-        float max = maximum.maxValueFromThree(33.3f, 27.7f, 7.7f);
-        Assert.assertNotEquals(27.7f, max, 0.00003);
+        FindMaximum maximum = new FindMaximum(33.3f, 27.7f, 7.7f);
+        Comparable max = maximum.maxValueFromThree();
+        Assert.assertNotEquals(27.7f, max);
     }
     @Test
     public void testMaximum_ProvideFirstStringAsLarge_ShouldReturnFirstString() {
-        FindMaximum findMaximum = new FindMaximum();
-        String max = findMaximum.maxValueFromThree("abcde" ,"abcd", "abc");
+        FindMaximum findMaximum = new FindMaximum("abcde" ,"abcd", "abc");
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals("abcde", max);
     }
 
     @Test
     public void testMaximum_ProvideSecondStringAsLarge_ShouldReturnSecondString() {
-        FindMaximum findMaximum = new FindMaximum();
-        String max = findMaximum.maxValueFromThree("abcd" ,"abcde", "abc");
+        FindMaximum findMaximum = new FindMaximum("abcd" ,"abcde", "abc");
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals("abcde", max);
     }
 
     @Test
     public void testMaximum_ProvideThirdStringAsLarge_ShouldReturnThirdString() {
-        FindMaximum findMaximum = new FindMaximum();
-        String max = findMaximum.maxValueFromThree("abcd" ,"abc", "abcde");
+        FindMaximum findMaximum = new FindMaximum("abcd" ,"abc", "abcde");
+        Comparable max = findMaximum.maxValueFromThree();
         Assert.assertEquals("abcde", max);
     }
 
     @Test
     public void testMaximum_ProvideWrongStringAsLarge_ShouldReturnFalse(){
-        FindMaximum maximum = new FindMaximum();
-        String max = maximum.maxValueFromThree("Orange","Aple","Guava");
+        FindMaximum maximum = new FindMaximum("Orange","Aple","Guava");
+        Comparable max = maximum.maxValueFromThree();
         Assert.assertNotEquals("Guava", max);
     }
 }

@@ -1,16 +1,36 @@
 
-public class FindMaximum {
+public class FindMaximum <T extends Comparable<T>>{
 
-    public static <T extends Comparable<T>> T maxValueFromThree(T fValue, T sValue, T tValue) {
-        T max = fValue;
+    private T fValue, sValue, tValue;
 
-        if(sValue.compareTo(max) > 0)
+    public FindMaximum(T fValue, T sValue, T tValue) {
+        this.fValue = fValue;
+        this.sValue = sValue;
+        this.tValue = tValue;
+    }
+
+    public T getfValue() {
+        return fValue;
+    }
+
+    public T getsValue() {
+        return sValue;
+    }
+
+    public T gettValue() {
+        return tValue;
+    }
+
+    public T maxValueFromThree() {
+        T max = getfValue();
+
+        if(getsValue().compareTo(max) > 0)
         {
-            max = sValue;
+            max = getsValue();
         }
-        if (tValue.compareTo(max) > 0)
+        if (gettValue().compareTo(max) > 0)
         {
-            max = tValue;
+            max = gettValue();
         }
         return max;
     }
