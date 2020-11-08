@@ -58,7 +58,33 @@ class TestMaximumValue {
         float max = maximum.maximumFloatValue(33.3f, 27.7f, 7.7f);
         Assert.assertNotEquals(27.7f, max, 0.00003);
     }
+    @Test
+    public void testMaximum_ProvideFirstStringAsLarge_ShouldReturnFirstString() {
+        FindMaximum findMaximum = new FindMaximum();
+        Comparable max = findMaximum.maximumValueOfString("abcde" ,"abcd", "abc");
+        Assert.assertEquals("abcde", max);
+    }
 
+    @Test
+    public void testMaximum_ProvideSecondStringAsLarge_ShouldReturnSecondString() {
+        FindMaximum findMaximum = new FindMaximum();
+        Comparable max = findMaximum.maximumValueOfString("abcd" ,"abcde", "abc");
+        Assert.assertEquals("abcde", max);
+    }
 
+    @Test
+    public void testMaximum_ProvideThirdStringAsLarge_ShouldReturnThirdString() {
+        FindMaximum findMaximum = new FindMaximum();
+        Comparable max = findMaximum.maximumValueOfString("abcd" ,"abc", "abcde");
+        Assert.assertEquals("abcde", max);
+    }
+
+    @Test
+    public void testMaximum_ProvideWrongStringAsLarge_ShouldReturnFalse(){
+        FindMaximum maximum = new FindMaximum();
+        String max = maximum.maximumValueOfString("Orange","Aple","Guava");
+        Assert.assertNotEquals("Guava", max);
+    }
+    }
 
 }
